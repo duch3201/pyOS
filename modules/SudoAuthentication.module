@@ -1,0 +1,35 @@
+import sys
+import os
+import zlib
+import platform
+import getpass
+import time
+import uuid
+import logging
+import cryptocode
+import importlib
+from random import seed
+from random import random
+from UserSpace import main
+
+# this is the "sudo" authentication command
+def authentication(username):
+  IsAuthenticated = False
+  print("please enter your password authenticate")
+  password = getpass.getpass(": ")
+  os.chdir(RootDir)
+  os.chdir("etc\passwrd")
+  os.chdir(username)
+  with open("passwrd", 'r') as passwrd_file:
+    passwrd = passwrd_file.read()
+    with open("code", 'r') as code_file:
+      code = code_file.read()
+      passwrd = cryptocode.decrypt(passwrd, code)
+      if passwrd == password:
+        #IsAuthenticated = True
+        print("Authentication Successful")
+        return IsAuthenticated == True
+      else:
+        #IsAuthenticated = False
+        print("invalid password")
+        return IsAuthenticated == False

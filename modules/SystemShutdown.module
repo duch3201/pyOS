@@ -1,0 +1,21 @@
+import sys
+import os
+import zlib
+import platform
+import getpass
+import time
+import uuid
+import logging
+import cryptocode
+import importlib
+from random import seed
+from random import random
+from UserSpace import main
+
+def shutdown(RootDir, username):
+    print("Shutting down...")
+    os.chdir(RootDir)
+    os.chdir("boot")
+    os.remove("SudoAuthentication.py")
+    os.remove("SystemShutdown.py")
+    sys.exit()

@@ -1,3 +1,4 @@
+from cmath import exp
 import sys
 import os
 import zlib
@@ -12,12 +13,21 @@ import cryptocode
 import importlib
 from random import seed
 from random import random
-from pOs_logon import login
+#from pOs_logon import login
 
-IsLoggedIn = ""
+#IsLoggedIn = ""
 
-login()
-print("UserSpace.py")
+#login()
+#print("UserSpace.py")
 
-def LoadNeededFiles():
-    print("LoadNeededFiles")
+#def LoadNeededFiles():
+ #   print("LoadNeededFiles")
+
+def main(username, password, RootDir):
+    try:
+        print("hello " + username + "!")
+        os.chdir(RootDir)
+        command = input(": ")
+    except KeyboardInterrupt:
+        print("\nGoodbye!")
+        sys.exit()

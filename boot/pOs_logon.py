@@ -54,10 +54,10 @@ def login():
 
   if IsLoggedIn == True:
     print("You are already logged in.")
-    global boolResetIsLoggedInKey
-    boolResetIsLoggedInKey = True
+    #global boolResetIsLoggedInKey
+    #boolResetIsLoggedInKey = True
     # this calls the SetNewVkey function to reset the IsLoggedIn.vkey file to 0
-    SetNewVkey(boolResetIsLoggedInKey)
+    #SetNewVkey(boolResetIsLoggedInKey)
 
   os.chdir(RootDir)
   os.chdir("etc\passwrd")
@@ -77,35 +77,15 @@ def login():
       if passwrd == password:
         print("welcome")
         IsLoggedIn = True
-        SetNewVkey(boolResetIsLoggedInKey)
-        LoadNeededFiles(username, RootDir)
+        #SetNewVkey(boolResetIsLoggedInKey)
+        LoadNeededFiles(username, password, RootDir)
       else:
         print("invalid password")
 
 login()
 
 
-# this is the "sudo" authentication command
-def authentication(username):
-  IsAuthenticated = False
-  print("please enter your password authenticate")
-  password = getpass.getpass(": ")
-  os.chdir(RootDir)
-  os.chdir("etc\passwrd")
-  os.chdir(username)
-  with open("passwrd", 'r') as passwrd_file:
-    passwrd = passwrd_file.read()
-    with open("code", 'r') as code_file:
-      code = code_file.read()
-      passwrd = cryptocode.decrypt(passwrd, code)
-      if passwrd == password:
-        #IsAuthenticated = True
-        print("Authentication Successful")
-        return IsAuthenticated == True
-      else:
-        #IsAuthenticated = False
-        print("invalid password")
-        return IsAuthenticated == False
+
 
 
 
