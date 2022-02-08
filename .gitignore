@@ -112,5 +112,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-etc/passwrd/Ttest/passwrd
+etc/passwrd
 boot/SudoAuthentication.py
