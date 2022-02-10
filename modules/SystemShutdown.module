@@ -10,7 +10,6 @@ import cryptocode
 import importlib
 from random import seed
 from random import random
-from UserSpace import main
 
 def shutdown(RootDir, username):
     print("Shutting down...")

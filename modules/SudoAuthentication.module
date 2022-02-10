@@ -10,10 +10,9 @@ import cryptocode
 import importlib
 from random import seed
 from random import random
-from UserSpace import main
 
 # this is the "sudo" authentication command
-def authentication(username):
+def authentication(username, RootDir):
   IsAuthenticated = False
   print("please enter your password authenticate")
   password = getpass.getpass(": ")

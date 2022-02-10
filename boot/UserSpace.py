@@ -13,6 +13,9 @@ import cryptocode
 import importlib
 from random import seed
 from random import random
+sys.path.append('/pyOS/modules')
+#import SudoAuthentication
+#import SystemShutdown
 #from pOs_logon import login
 
 #IsLoggedIn = ""
